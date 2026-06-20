@@ -33,7 +33,7 @@ LICENSE
 Release 标题示例：
 
 ```text
-Product Image Downloader v0.2.0
+Amazon Product Image Downloader v0.2.1
 ```
 
 Release 描述示例：
@@ -41,7 +41,8 @@ Release 描述示例：
 ```text
 ## Highlights
 
-- 支持 Amazon、AliExpress、SHEIN 商品图片下载。
+- 主要支持 Amazon 商品图片下载。
+- 附带支持 AliExpress、SHEIN 商品图片下载。
 - 支持商品详情页和搜索结果页图片选择。
 - 优化 Amazon 搜索页复选框点击体验。
 

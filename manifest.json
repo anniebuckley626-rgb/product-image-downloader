@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "商品图片下载助手",
-  "description": "识别 Amazon、AliExpress、SHEIN 商品详情页和搜索结果页图片，支持预览、勾选和批量下载。",
-  "version": "0.2.0",
+  "name": "亚马逊商品图片下载助手",
+  "description": "快速下载亚马逊商品图片，并支持 AliExpress、SHEIN 商品详情页和搜索结果页图片整理。",
+  "version": "0.2.1",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
@@ -10,7 +10,7 @@
     "128": "icons/icon-128.png"
   },
   "action": {
-    "default_title": "商品图片下载助手",
+    "default_title": "亚马逊商品图片下载助手",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
