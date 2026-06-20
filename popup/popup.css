@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --text: #111827;
+  --muted: #657181;
+  --line: #d7dde5;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --warn-bg: #fff8e1;
+  --warn-text: #7a4d00;
+  --danger-bg: #fff1f2;
+  --danger-text: #9f1239;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 420px;
+  min-height: 520px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  max-width: 330px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: #aeb8c6;
+}
+
+.status {
+  margin: 12px 16px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.status:empty {
+  display: none;
+}
+
+.status.warning {
+  background: var(--warn-bg);
+  border-color: #f3d487;
+  color: var(--warn-text);
+}
+
+.status.error {
+  background: var(--danger-bg);
+  border-color: #fecdd3;
+  color: var(--danger-text);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 16px 0;
+  color: var(--muted);
+}
+
+.hidden {
+  display: none;
+}
+
+.checkline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.checkline input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.groups {
+  flex: 1;
+  padding: 12px 16px 88px;
+  overflow-y: auto;
+}
+
+.group {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.group-checkline {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.group-name {
+  display: block;
+  max-width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.group-count {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tile input {
+  position: absolute;
+  z-index: 2;
+  top: 6px;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.image-wrap {
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: #f9fafb;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.image-index {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  min-width: 24px;
+  height: 20px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.78);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tile:has(input:not(:checked)) {
+  opacity: 0.48;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  padding: 12px 16px 16px;
+  background: rgba(246, 247, 249, 0.96);
+  border-top: 1px solid var(--line);
+}
+
+.primary {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+.primary:disabled {
+  background: #aab5c4;
+  cursor: not-allowed;
+}

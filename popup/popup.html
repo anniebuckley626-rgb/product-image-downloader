@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>电商商品图片提取器</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>商品图片</h1>
+          <p id="subtitle" class="subtitle">正在读取当前页面...</p>
+        </div>
+        <button id="refreshButton" class="icon-button" type="button" title="重新读取" aria-label="重新读取">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </header>
+
+      <section id="status" class="status" role="status"></section>
+
+      <section id="summary" class="summary hidden">
+        <label class="checkline">
+          <input id="selectAll" type="checkbox" checked>
+          <span>全选</span>
+        </label>
+        <span id="countText">0 张已选</span>
+      </section>
+
+      <section id="groups" class="groups"></section>
+
+      <footer class="footer">
+        <button id="downloadButton" class="primary" type="button" disabled>下载选中图片</button>
+      </footer>
+    </main>
+
+    <template id="groupTemplate">
+      <article class="group">
+        <div class="group-header">
+          <label class="checkline group-checkline">
+            <input class="group-checkbox" type="checkbox" checked>
+            <span class="group-name"></span>
+          </label>
+          <span class="group-count"></span>
+        </div>
+        <div class="image-grid"></div>
+      </article>
+    </template>
+
+    <template id="imageTemplate">
+      <label class="tile">
+        <input class="image-checkbox" type="checkbox" checked>
+        <span class="image-wrap">
+          <img alt="" loading="lazy">
+        </span>
+        <span class="image-index"></span>
+      </label>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
